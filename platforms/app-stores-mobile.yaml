@@ -1,0 +1,23 @@
+id: app-stores-mobile
+display_name: "Mobile App Stores (Apple App Store / Google Play)"
+url: "https://developer.apple.com/app-store/ | https://play.google.com/console"
+category_fit:
+  - "mobile app"
+audience: >
+  The entire mobile install base for the target platform(s) — the largest
+  reach number in this registry, but also the highest-friction gatekeeper: a
+  listing has to pass platform review before it's visible to anyone.
+reach_rating: 5
+effort_rating: 4
+time_to_value: slow
+prerequisites:
+  - "Internal/beta testing already done (TestFlight for iOS, Google Play's Internal/Closed testing tracks) — see deployment-patterns.md §5. Submitting straight to public review without this risks a rejection cycle on issues beta testing would have caught."
+  - "Apple: business/developer account verification, which is not instant — start this well before the intended launch date."
+submission_workflow:
+  - "Apple: enroll in the Apple Developer Program ($99/yr), complete business verification, submit the build via App Store Connect, and wait for App Review (can take several days and may reject on guideline grounds)."
+  - "Google Play: pay the one-time $25 registration fee, submit via Play Console, and wait for review (typically faster and less strict than Apple's)."
+  - "Prepare store listing assets for both: screenshots per required device size, an app description, and a privacy-policy URL (both stores require one even for apps that collect minimal data)."
+notes: >
+  Treat Apple's and Google's timelines as materially different when
+  sequencing a launch — do not assume both stores go live on the same day even
+  if submitted simultaneously.

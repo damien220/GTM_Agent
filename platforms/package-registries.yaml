@@ -1,0 +1,30 @@
+id: package-registries
+display_name: "Package Registries (npm / PyPI / crates.io / RubyGems)"
+url: "https://npmjs.com | https://pypi.org | https://crates.io | https://rubygems.org"
+category_fit:
+  - "dev tool / library"
+  - "CLI"
+stack_fit_notes: >
+  Pick the registry matching the project's actual language/stack from
+  classification — this entry covers the pattern, not one specific registry.
+  Not applicable to a pure Claude Code agent with no installable package
+  component (see project-classification.md's stack special case) unless it
+  also ships a standalone CLI/library artifact.
+audience: >
+  Developers who find tools via `npm search`/`pip install`-style discovery or
+  direct recommendation, not via a launch post — this is durable, compounding
+  reach rather than a spike.
+reach_rating: 3
+effort_rating: 2
+time_to_value: slow
+prerequisites:
+  - "Actually published to the registry at least once, with a real version tag and reasonably complete metadata (description, keywords, repository link) — not merely packageable in principle (e.g. having a manifest file present isn't enough on its own)."
+submission_workflow:
+  - "Publish via the registry's own CLI (`npm publish`, `twine upload`/`uv publish`, `cargo publish`, `gem push`) — see deployment-patterns.md §1 for the mechanics, this file covers the discovery/launch angle only."
+  - "Set package keywords/tags matching the project's classified category and stack, mirroring github-topics.yaml's guidance."
+  - "Keep the registry README/description in sync with the project's actual GitHub README — a stale registry listing undercuts trust."
+notes: >
+  This is the dev-tool/library and CLI equivalent of "existing in the store at
+  all" — low excitement, high durability. Pair with a launch-day platform
+  (Hacker News, Product Hunt) rather than relying on registry listing alone for
+  initial traction.

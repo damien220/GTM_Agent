@@ -1,0 +1,35 @@
+id: product-hunt
+display_name: "Product Hunt"
+url: "https://www.producthunt.com"
+category_fit:
+  - "dev tool / library"
+  - "SaaS / web app"
+  - "content / creative tool"
+  - "AI agent"
+  - "mobile app"
+stack_fit_notes: >
+  Needs something a visitor can actually try in a browser or install in under a
+  minute — a bare source repo with no demo undersells badly here. A pure Claude
+  Code agent with no hosted surface (see project-classification.md's stack
+  special case) is a weak fit unless it has a companion CLI/demo to point at.
+audience: >
+  Tech-early-adopter crowd: indie hackers, PMs, founders, and some VCs scouting
+  for new tools on launch day. Rewards a strong visual first impression and
+  early momentum; largely indifferent to source-code quality itself.
+reach_rating: 5
+effort_rating: 3
+time_to_value: fast
+prerequisites:
+  - "A live, visitable product, demo, or install path — not just a GitHub repo."
+  - "3+ early testimonials or usage signals gathered before launch day — first-hour upvote momentum drives Product Hunt's ranking algorithm."
+  - "Launch assets ready: tagline (under 60 characters), 3-5 gallery images/GIFs, a maker's first comment explaining the why."
+submission_workflow:
+  - "Create a hunter account, or find an established hunter with an existing following to submit on your behalf."
+  - "Prepare the tagline, gallery, and first-comment copy in advance — don't write these the morning of launch."
+  - "Schedule the launch for 12:01am PT (Product Hunt's daily reset), Tuesday–Thursday for peak traffic."
+  - "Be present all day to reply to every comment — response rate visibly affects ranking."
+notes: >
+  Best used as a momentum event after at least one lower-effort channel (Hacker
+  News, a niche community) has already produced feedback/testimonials to seed
+  the launch-day assets with — see platform-scoring-methodology.md's worked
+  example.

@@ -1,0 +1,32 @@
+id: hacker-news
+display_name: "Hacker News (Show HN)"
+url: "https://news.ycombinator.com/showhn.html"
+category_fit:
+  - "dev tool / library"
+  - "CLI"
+  - "API"
+  - "AI agent"
+  - "SaaS / web app"
+stack_fit_notes: >
+  Works well for a Claude Code agent / dev-tool-shaped project with no hosted
+  URL — HN's audience reads source and READMEs directly, unlike Product Hunt's
+  need for a polished visitable demo.
+audience: >
+  Developers, engineers, and technical founders evaluating tools for their own
+  use. Skeptical of marketing language; rewards technical substance, honesty
+  about limitations, and a working example over a pitch.
+reach_rating: 4
+effort_rating: 2
+time_to_value: fast
+prerequisites: []
+submission_workflow:
+  - "Post with title format 'Show HN: <Project> – <one-line description>'."
+  - "Link directly to the repo/demo, not a marketing landing page."
+  - "Post the first comment yourself explaining what it is, why you built it, and current limitations — HN penalizes anything that reads as evasive."
+  - "Time the post for US morning hours (roughly 8am–11am ET) on a weekday for the best chance of front-page visibility."
+  - "Reply to every technical comment promptly and substantively — HN threads are where the real evaluation happens, not the post itself."
+notes: >
+  No submission gate or account requirements beyond a free HN account — the
+  only real prerequisite is having something worth showing. A good source of
+  early, credible testimonials/feedback other platforms' prerequisites ask for
+  (see product-hunt.yaml's notes).

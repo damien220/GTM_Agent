@@ -1,0 +1,12 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Python (only if a future platform-registry tool needs it)
+__pycache__/
+*.pyc
+.venv/
+
+# Note: .claude/agents/*.md ARE the product here — never ignore them.

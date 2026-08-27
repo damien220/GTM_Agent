@@ -1,0 +1,26 @@
+id: indie-hackers
+display_name: "Indie Hackers"
+url: "https://www.indiehackers.com"
+category_fit:
+  - "SaaS / web app"
+  - "dev tool / library"
+  - "content / creative tool"
+  - "AI agent"
+audience: >
+  Solo founders and small teams building and monetizing their own products —
+  receptive to "build in public" posts (revenue numbers, growth milestones,
+  lessons learned), less receptive to a bare launch announcement with no story.
+reach_rating: 2
+effort_rating: 2
+time_to_value: medium
+prerequisites: []
+submission_workflow:
+  - "Create a product page under the Products directory."
+  - "Post in the community forum framed as a milestone, lesson, or honest build-in-public update — not a plain announcement."
+  - "Engage with comments and other founders' posts regularly rather than only posting when launching something — the community rewards consistent participation over drive-by promotion."
+notes: >
+  Best suited to a project with an actual "founder journey" angle (a solo
+  developer, a bootstrapped SaaS) — a pure internal tool or an agent-definition
+  project with no monetization story is a weaker fit here even though
+  category_fit technically matches; audience_fit should reflect that at
+  scoring time.

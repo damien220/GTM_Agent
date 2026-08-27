@@ -1,0 +1,25 @@
+id: awesome-lists
+display_name: "Curated \"Awesome X\" GitHub Lists"
+url: "varies — search 'awesome <topic>' on GitHub"
+category_fit:
+  - "dev tool / library"
+  - "CLI"
+  - "API"
+  - "AI agent"
+audience: >
+  Developers browsing a curated, community-vetted list for a specific
+  technology or problem space — high trust per click since inclusion implies
+  some vetting already happened, but very low absolute traffic per addition.
+reach_rating: 1
+effort_rating: 1
+time_to_value: slow
+prerequisites:
+  - "A genuinely complete, documented project — most Awesome lists' contribution guidelines reject unfinished or undocumented entries."
+submission_workflow:
+  - "Find 2-3 relevant Awesome lists for the project's language/category (e.g. awesome-python, awesome-cli-apps, an 'awesome-claude-code' style list for an AI agent project)."
+  - "Read each list's CONTRIBUTING.md exactly — format, alphabetization, and description-length rules vary and PRs violating them get closed without review."
+  - "Open a PR adding one line: project name, link, one-sentence description matching the list's existing style."
+notes: >
+  Cheapest, lowest-ceiling item in the registry — worth doing but never worth
+  prioritizing over a launch-day platform (Hacker News, Product Hunt) when
+  sequencing a limited amount of launch effort.

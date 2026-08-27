@@ -1,0 +1,36 @@
+id: niche-communities
+display_name: "Niche Communities (Reddit / Discord / field-specific forums)"
+url: "varies by community"
+category_fit:
+  - "dev tool / library"
+  - "SaaS / web app"
+  - "CLI"
+  - "game"
+  - "mobile app"
+  - "API"
+  - "content / creative tool"
+  - "AI agent"
+audience: >
+  Highly variable by community, but the shared trait is that members are
+  already self-selected around a specific interest — a subreddit or Discord
+  for the project's exact niche will out-convert a broad platform on a
+  per-visitor basis, at the cost of much smaller total reach per post.
+reach_rating: 2
+effort_rating: 2
+time_to_value: medium
+prerequisites:
+  - "Enough standing in the community to post without looking like a drive-by promoter — this usually means some prior genuine participation, not a first-post launch announcement."
+submission_workflow:
+  - "Identify 2-3 communities matching the project's classified category/field (e.g. r/SideProject or r/[language] for a dev tool, r/[genre]dev or a Discord server for a game, an industry-specific subreddit for a vertical SaaS)."
+  - "Read and follow each community's self-promotion rules exactly — many cap self-promo frequency or require a specific weekly thread; violating this gets posts removed and can get the account banned."
+  - "Frame the post around the problem solved or the build process, not a bare announcement — communities reward a story or genuine ask for feedback over an ad."
+  - "Engage authentically with replies; treat this as relationship-building, not a one-off broadcast."
+notes: >
+  This entry applies to every category because "which community" is
+  field-specific, not category-specific — the workflow above is how to find
+  and approach the right one for the classified project, not a single fixed
+  destination the way product-hunt.yaml or itch-io.yaml are. Because this is a
+  pattern rather than one platform, distribution-specialist should name 2-3
+  concrete communities for the specific classified project when producing the
+  guide, rather than leaving this entry generic in the output — the YAML
+  defines the approach, the guide should instantiate it.

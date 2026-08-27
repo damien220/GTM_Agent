@@ -1,0 +1,34 @@
+id: devto
+display_name: "Dev.to (launch/tutorial post)"
+url: "https://dev.to"
+category_fit:
+  - "dev tool / library"
+  - "CLI"
+  - "API"
+  - "AI agent"
+  - "content / creative tool"
+stack_fit_notes: >
+  This entry covers Dev.to as a **distribution/discovery channel** (a written
+  launch or tutorial post that drives traffic to the project) — it carries no
+  post-formatting rules. Actual post copy/formatting for Dev.to is
+  `ContentPost_agent`'s `platforms/devto.yaml` (a separate file, separate
+  concern — see `plan.md` §5's boundary note); once that handoff exists, hand
+  drafting off to it rather than duplicating tone/format rules here.
+audience: >
+  Developers reading technical tutorials and build-in-public write-ups —
+  responds well to "how I built X" or "how to use X for Y" framing more than a
+  bare announcement.
+reach_rating: 3
+effort_rating: 3
+time_to_value: medium
+prerequisites:
+  - "Enough substance for a real technical post (a walkthrough, an architecture explanation, a problem/solution narrative) — a thin 'we launched' post underperforms badly here."
+submission_workflow:
+  - "Write a tutorial-style or build-story post that uses the project as the example, not a direct pitch."
+  - "Cross-post to relevant tags (e.g. #showdev, #opensource, plus language/framework tags) to maximize the feed algorithm's reach."
+  - "Link back to the repo/product naturally within the content, not only as a closing CTA."
+notes: >
+  Higher effort than a launch-post platform (Hacker News, Product Hunt)
+  because it requires real written content, not just a link and a tagline —
+  best used once there's a genuine story to tell (an interesting technical
+  decision, a build retrospective), not as a day-one launch step.

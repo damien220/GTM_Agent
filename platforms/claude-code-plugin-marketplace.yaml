@@ -1,0 +1,33 @@
+id: claude-code-plugin-marketplace
+display_name: "Claude Code Plugin / Marketplace Distribution"
+url: "https://docs.claude.com/claude-code (plugin & marketplace docs)"
+category_fit:
+  - "AI agent"
+stack_fit_notes: >
+  Applies specifically to the "Claude Code agent" stack special case from
+  project-classification.md — a project whose runtime *is* `.claude/agents/`
+  `.md` definitions (plus optional refs/YAML/Python helpers). Not applicable to
+  a hosted AI-agent service (an API-driven agent with its own backend) — that
+  case is covered by deployment-patterns.md §8, not this entry.
+audience: >
+  Other Claude Code users looking for agents/skills to install — a much
+  smaller, more specific audience than a general dev-tool launch platform, but
+  one with zero friction to actually try the thing (a marketplace install vs.
+  cloning a repo and reading docs).
+reach_rating: 2
+effort_rating: 2
+time_to_value: medium
+prerequisites:
+  - "The agent should be stable and already dogfooded/self-tested (per this repo's own convention of testing an agent against real fixtures before considering it done) — a marketplace listing invites cold install traffic that raw repo visibility doesn't."
+submission_workflow:
+  - "Confirm the agent's canonical `.md` file already lives inside its own project directory's `.claude/agents/` (never at a shared root) and is symlinked into the personal tier per Dev_Agents/CLAUDE.md rule 9 — this is the local-use baseline, not the marketplace step itself."
+  - "Package the agent (and any refs/YAML it depends on) as a Claude Code plugin per the current plugin/marketplace docs — verify the exact packaging steps against Claude Code's own documentation at submission time, since this mechanism is newer and more likely to change than an established registry's process."
+  - "Publish/list it wherever Claude Code plugin marketplaces are currently discoverable, with a clear description of what the agent does and its required inputs."
+notes: >
+  This is the one platform in this registry specific to `Dev_Agents`' own
+  primary output type (Claude Code agents), and the most directly relevant
+  distribution channel for most of this portfolio's own projects
+  (LegalAgent, PaymentAgent, GTM_Agent itself). Keep this entry's
+  submission_workflow loosely specified and revisit it before relying on it —
+  plugin/marketplace mechanics are the least stable process in this file
+  compared to long-established channels like npm or GitHub.

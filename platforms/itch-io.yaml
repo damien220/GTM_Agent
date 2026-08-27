@@ -1,0 +1,27 @@
+id: itch-io
+display_name: "itch.io"
+url: "https://itch.io"
+category_fit:
+  - "game"
+stack_fit_notes: >
+  Supports downloadable builds (Windows/Mac/Linux) and browser-playable HTML5/
+  WebGL exports directly — no separate hosting needed for a web-exportable
+  build.
+audience: >
+  Indie-game players, jam participants, and other indie developers — receptive
+  to early/rough builds and experimental genres in a way storefronts like Steam
+  are not.
+reach_rating: 3
+effort_rating: 1
+time_to_value: fast
+prerequisites: []
+submission_workflow:
+  - "Create a free itch.io account and a new project page."
+  - "Upload builds per platform, or a browser-playable export for zero-install access."
+  - "Write a page description and add at least 3-5 screenshots or a short GIF (see presentation-standards.md §2 for the capture brief)."
+  - "Set pricing (including 'pay what you want' or free) and publish."
+  - "Optionally submit to a relevant game jam first — jams bring a built-in audience with far less discovery effort than a cold storefront listing."
+notes: >
+  Recommended as the primary/first game-launch step in deployment-patterns.md
+  §4 — no cost, no review gate, and a natural place to validate interest before
+  considering Steam's $100 setup fee (see steam.yaml).

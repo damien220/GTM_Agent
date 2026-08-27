@@ -1,0 +1,30 @@
+id: github-topics
+display_name: "GitHub Topics"
+url: "https://github.com/topics"
+category_fit:
+  - "dev tool / library"
+  - "CLI"
+  - "API"
+  - "AI agent"
+  - "content / creative tool"
+stack_fit_notes: >
+  Applies to any project with a public GitHub repo, including a Claude Code
+  agent project — the repo itself is the artifact being tagged, not a hosted
+  service.
+audience: >
+  Developers browsing or searching GitHub by subject rather than arriving via
+  a specific launch post — this is passive/ongoing discovery, not a launch-day
+  spike like Product Hunt or Hacker News.
+reach_rating: 2
+effort_rating: 1
+time_to_value: slow
+prerequisites: []
+submission_workflow:
+  - "Repo → About (gear icon) → Topics — add 5-10 relevant, specific tags matching the project's category and stack (e.g. 'cli-tool', 'claude-code', 'python', not just generic terms like 'tool')."
+  - "Check that at least one or two topics match what a searcher would actually type — overly generic or overly niche tags both reduce discoverability."
+  - "Revisit topics whenever the project's stack or scope changes materially."
+notes: >
+  Lowest effort item in the whole registry — essentially free and should be
+  done immediately regardless of what else is planned, not treated as a
+  dedicated "launch" step. Feeds `presentation-standards.md`'s repo-hygiene
+  checklist as well as this Distribution Guide.

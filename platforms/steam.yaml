@@ -1,0 +1,28 @@
+id: steam
+display_name: "Steam (Steamworks)"
+url: "https://partner.steamgames.com"
+category_fit:
+  - "game"
+stack_fit_notes: >
+  Requires a packaged desktop build (Windows at minimum; Mac/Linux optional)
+  via Steamworks — browser-only games need a native wrapper first.
+audience: >
+  By far the largest PC gaming audience of any storefront, but a highly
+  competitive, saturated discovery surface — a store page alone rarely
+  generates traffic without external attention (press, streamers, an existing
+  following) driving people to it.
+reach_rating: 5
+effort_rating: 5
+time_to_value: slow
+prerequisites:
+  - "Validated interest elsewhere first (an itch.io release, a demo, a community following) — Steam's $100 direct-to-Steam fee and review cycle are wasted on an unvalidated concept."
+  - "Store page assets: capsule images, trailer, and 4+ screenshots meeting Steam's exact size/format requirements."
+submission_workflow:
+  - "Pay the $100 Steam Direct fee per game (refunded after the game sells $1,000, per Steam's current policy — verify current terms before relying on this)."
+  - "Complete Steamworks onboarding: tax/banking info, build upload, store page draft."
+  - "Submit for review — turnaround varies, budget for delay, not a fixed timeline."
+  - "Plan a coordinated launch date with any press/streamer outreach, rather than publishing the moment review clears."
+notes: >
+  Sequence after itch.io (see itch-io.yaml) per deployment-patterns.md §4 — use
+  itch.io/a demo to validate interest and gather the store-page assets before
+  committing the Steam Direct fee and review-cycle time.
