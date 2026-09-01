@@ -19,8 +19,37 @@ project's classified category and field. `marketing-specialist` must never
 present this file's general framework as if it were a live-search finding, and
 must never present a live-search finding as more universal than it is. State
 plainly in the guide which parts come from this file (durable structure) versus
-the search (current, field-specific) — per `plan.md` §6's Critical Rule that
+the search (current, field-specific) — per `docs/plan.md` §6's Critical Rule that
 the guide "should note when a tactic is field-specific vs. generic."
+
+## Search budget: 2 baseline + up to 2 optional
+
+The live search is `marketing-specialist`'s job, but *how much* of it is enough
+is a durable question, so it belongs here rather than being re-decided each run.
+Cap a normal run at four searches:
+
+**Baseline (always run both):**
+1. **Field survey** — current marketing/outreach practice for the classified
+   category and field ("developer tool launch marketing 2026," "indie game
+   marketing tactics 2026").
+2. **The targeted "why now" angle** — the follow-up the script structure below
+   requires, aimed at this project's own hook (a pricing gap, a cost shift, a
+   named competitor pattern). The broad survey rarely produces one on its own.
+
+**Optional (run only if a baseline left a specific gap):**
+3. **A named-competitor pattern** — what a direct comparable actually did, when
+   the pitch needs a concrete contrast rather than a trend.
+4. **Current channel effectiveness** — which channels are working now for this
+   field, when the Ongoing Strategy's cadence would otherwise be generic.
+
+Stop at four. A real run made seven searches for one section
+(`docs/design-review-2026-08.md` §2.8) — not wrong, but past the fourth the
+marginal finding stops changing the plan, and an unbounded search loop is the
+pathological case this cap exists to prevent. If four searches genuinely
+produced no citable "why now," say so and fall back to this file's durable
+framework labeled as general practice — never keep searching until something
+usable turns up, and never pad the gap with invented specifics (see the
+Disclaimer posture below).
 
 ## Trust-building tactics (durable framework)
 
@@ -37,7 +66,7 @@ the guide "should note when a tactic is field-specific vs. generic."
   audience, which tends to actively distrust polish that outruns substance.
 - **Consistency over intensity.** A steady, honest update cadence outperforms
   one big launch burst followed by silence — this is the backbone of the
-  "ongoing strategy" `plan.md` §1 asks the Marketing Plan to describe, not a
+  "ongoing strategy" `docs/plan.md` §1 asks the Marketing Plan to describe, not a
   one-time push.
 - **Community-first framing.** Genuine participation in a relevant community
   before making any ask — mirrors `niche-communities.yaml`'s own prerequisite
@@ -86,7 +115,7 @@ specific to the classified project, not a template with blanks").
 ## Disclaimer posture (adapted from `LegalAgent/refs/upl-and-disclaimer-policy.md`)
 
 Marketing and pitch guidance here is **tactical, not legal, financial, or PR
-counsel** (`plan.md` §4's non-goal) — the same posture `LegalAgent` takes
+counsel** (`docs/plan.md` §4's non-goal) — the same posture `LegalAgent` takes
 toward legal conclusions, adapted to this domain's actual risk:
 
 - Never present a tactic as guaranteed to produce results — frame

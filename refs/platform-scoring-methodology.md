@@ -2,7 +2,7 @@
 
 Defines the platform YAML schema and the rubric `distribution-specialist` uses to
 turn `platforms/*.yaml` entries into the **rated, prioritized** list required by
-`DISTRIBUTION_GUIDE.md` (`plan.md` §1, §5, §6). This is the same shape as
+`DISTRIBUTION_GUIDE.md` (`docs/plan.md` §1, §5, §6). This is the same shape as
 `LegalAgent/refs/risk-scoring-methodology.md` scoring clause risk, applied to
 launch channels instead: a fixed set of dimensions, a formula that combines
 them, and an explicit rule for the one case where the formula alone gives the
@@ -39,6 +39,13 @@ submission_workflow:              # ordered, concrete steps
 notes: >                          # optional — anything the rubric can't capture as a field
   Free text for caveats that don't fit a structured field.
 ```
+
+**This schema is enforced, not just documented** — `lib/validate_platforms.py`
+checks every `platforms/*.yaml` file against it (required/optional keys,
+kebab-case `id` matching the filename, `category_fit` entries drawn from
+`project-classification.md`'s exact category list, 1–5 ratings, `time_to_value`
+in `fast|medium|slow`, non-empty `submission_workflow`). Run it after editing or
+adding any platform file: `python lib/validate_platforms.py`.
 
 `category_fit` uses the exact category strings from
 `project-classification.md`'s Dimension 1 list, so a classification block can be
@@ -131,7 +138,7 @@ it scored.
 ## Rating rationale requirement
 
 Every platform in the output must show the dimension values it was scored on,
-not a bare rank — per `plan.md` §6 Critical Rules ("every rated recommendation
+not a bare rank — per `docs/plan.md` §6 Critical Rules ("every rated recommendation
 must cite its scoring dimensions"). A ranked list with no "why" is not an
 acceptable `distribution-specialist` output.
 

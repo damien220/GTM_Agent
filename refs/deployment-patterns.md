@@ -18,7 +18,7 @@ tells you whether there's a server to host at all. Recommend **one primary path*
 plus at most one alternative with a one-line tradeoff — this is a decision the
 user has to act on, not a survey of every host that exists. Never recommend
 running `terraform apply` or performing the deploy on the user's behalf
-(`plan.md §4` — this agent writes guides, it does not deploy).
+(`docs/plan.md §4` — this agent writes guides, it does not deploy).
 
 **Dual-artifact projects are a different case from an ambiguous single category —
 don't collapse them into "pick one section."** Some projects genuinely ship two
@@ -148,9 +148,51 @@ whichever of the above actually matches:
 
 ## 8. AI agent (general, hosted service)
 
-For an AI agent that runs as a hosted service (a webhook server, an API a user
-calls) rather than as a Claude Code subagent: treat as §6 (API) or §2 (SaaS)
-depending on whether it has a UI — pick using the same stack signals.
+**When this applies rather than §9:** the agent has a real runtime — a webhook
+server, an API the user calls, a long-running process — that keeps running
+whether or not anyone has Claude Code open. A `Dockerfile`, a Flask/FastAPI/
+Express entrypoint, or a stated "listens on port N" is this section; a bare
+`.claude/agents/*.md` tree is §9, which has nothing to host at all. Whether it
+has a browser UI decides which host row you reuse: **no UI → §6 (API)**, **UI →
+§2 (SaaS / web app)** — cross-reference that comparison, don't re-derive it here.
+
+- **Primary path — container image → persistent host.** A runtime agent wants a
+  container rather than a buildpack: the dependency set (an LLM SDK, a vector
+  store client, system libs) is easier to pin than to detect. `Dockerfile` →
+  build → push to a registry (**GHCR** if the code is already on GitHub — one
+  auth story; **Docker Hub** if it must be pullable from outside the repo) →
+  deploy that image to a persistent host from §2's backend row (**Railway**,
+  **Render**, **Fly.io**), chosen by exactly §2's logic.
+- **Alternative: a plain VPS**, worth it only when the agent needs something a
+  PaaS won't give it (a GPU, an unusual runtime, existing infra to sit beside) —
+  tradeoff: you now own OS patching and TLS renewal.
+- **Flag serverless as the wrong default** if the project's docs assume
+  Vercel/Lambda. An agent that holds a session, loops, or waits on a slow model
+  call fits badly into a short function timeout. Fine for a thin webhook
+  *receiver*; not for the agent loop itself.
+- **Secrets — the LLM provider key above all.** Keys go in the host's secret
+  store / env UI, never baked into the image layer (an image is copyable, an env
+  var is not). Use **separate keys per environment**, so a leak or a runaway loop
+  in staging is revocable without touching production. Don't restate
+  `PaymentAgent`'s webhook-secret sequencing — cross-reference
+  `PaymentAgent/refs/deployment-and-delivery-guide.md`'s pattern the same way §2
+  does.
+- **Health checks and uptime monitoring, not optional here.** An agent that
+  silently dies is worse than one that errors loudly — the caller sees nothing
+  and the failure surfaces days later. Expose a `/health` route that checks what
+  actually breaks (can it reach the provider) rather than one that returns 200
+  while the process is alive, point the host's health check at it, and add an
+  external uptime check for when the host itself is down.
+- **Deploy pipeline → `CI_CD_agent`.** Build-and-push on merge, tests as a gate,
+  rollback — that's this repo's own tool. Forward pointer only; don't re-derive
+  pipeline config here, same note §1 makes.
+
+Per this file's Output format, give **one primary path plus at most one
+alternative** — for most runtime agents, container-on-PaaS with the VPS as the
+alternative. Archetypes: `A_OpenClaw` (a genuine runtime agent — this section,
+not §9) and `CI_CD_agent`'s Flask webhook service, whose **dev tool** secondary
+tag exists precisely because that server needs hosting a pure agent definition
+wouldn't.
 
 ## 9. AI agent — Claude Code agent (the stack special case)
 

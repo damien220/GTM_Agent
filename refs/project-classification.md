@@ -11,7 +11,7 @@ input files and before calling any specialist.
 
 ## Inputs to read
 
-Default input set (mirrors `plan.md §1`):
+Default input set (mirrors `docs/plan.md §1`):
 
 - `README.md`, `plan.md`, `CLAUDE.md` at the target project's root.
 - If the user points the agent at other files instead (a pitch deck, a spec, a
@@ -48,7 +48,7 @@ input rather than guessing.
 ## Dimension 1: Category
 
 Pick one **primary** category from the fixed list below (kept identical to
-`plan.md §5` so specialist prompts and `platforms/*.yaml` category-fit fields stay
+`docs/plan.md §5` so specialist prompts and `platforms/*.yaml` category-fit fields stay
 in sync). A project may also carry one **secondary** tag when it genuinely spans
 two — see Edge Cases.
 
@@ -169,7 +169,7 @@ confidence_notes: <any ambiguity, thin input, or assumption made — omit if non
   definition doesn't). Don't add a secondary tag just because a project touches
   another domain in passing.
 - **Claude Code agent projects specifically.** Since this repo's own agents are
-  the primary test fixtures for Phase 1 acceptance (`plan.md §9`), do not default
+  the primary test fixtures for Phase 1 acceptance (`docs/plan.md §9`), do not default
   their maturity or deployment framing to "it needs a hosting provider" — see the
   Stack special case above. Their "shipping" story is usually: register the
   agent file (symlink into `/home/vscode/.claude/agents/` per `Dev_Agents/CLAUDE.md`

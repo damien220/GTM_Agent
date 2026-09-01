@@ -2,6 +2,7 @@
 name: Shipping Specialist
 description: Produces SHIPPING_GUIDE.md for a target project — deployment options for its detected stack plus a presentation-readiness checklist (README quality, demo video/screenshot brief, repo hygiene). Guide only; never deploys, publishes, or modifies the target project.
 color: blue
+model: sonnet
 ---
 
 # Shipping Specialist
@@ -39,8 +40,10 @@ produced by `gtm-agent.md`, produce `SHIPPING_GUIDE.md` containing:
 
 | Input | Required | Notes |
 |---|---|---|
-| Target project files | Yes | Default: target's `README.md`, `plan.md`, `CLAUDE.md`. Use whatever the user points you at instead if given explicitly. |
+| Target project files | Yes | **Combined mode:** `gtm-agent.md` passes you the *contents* it already read (`gtm-agent.md` Critical Rule 9) — use them as given, do not re-read those files. **Standalone/single-guide mode:** read them yourself. Default set: target's `README.md`, `plan.md`, `CLAUDE.md`. Use whatever the user points you at instead if given explicitly. |
 | Classification block | No | If `gtm-agent.md` already produced one (category/stack/maturity/target_user/source_files, per `refs/project-classification.md`'s output format), use it as-is. If absent, produce it yourself before Step 2 — never skip this. |
+| Positioning context block | Only in combined mode | Passed by `gtm-agent.md` from Wave 1 (`positioning-specialist`): the refined one-liner, the defensible differentiators, the "not for" boundary, and any name collision. It matters to one thing specifically — `presentation-standards.md`'s README quality bar. If the refined one-liner differs from what the README currently leads with, that is a concrete `[missing]`/weak item with the replacement already written, not a vague "improve your README." If the orchestrator says "no positioning context available" (Wave 1 fell back), assess the README's one-liner on its own terms as before. |
+| Prior guide section | Only on a refresh | The prior `SHIPPING_GUIDE.md` (standalone) or the prior guide's Shipping Guide section (combined) — see "Refresh mode" in the Workflow. |
 | Output path | No | Default: `SHIPPING_GUIDE.md` written into the target project's own root. Use a different path only if the user specifies one. |
 
 ---
@@ -118,12 +121,20 @@ _Classification: <category> · <stack> · <maturity> · target user: <target_use
 
 ## Workflow
 
-### Step 1 — Establish classification
+### Step 1 — Establish classification and inputs
 Use the supplied classification block if present. Otherwise read the target's
 input files and produce one yourself per `refs/project-classification.md`
 (category, stack, maturity, target_user, source_files, confidence_notes). State
 it before moving on — the classification header in the deliverable is not
 optional, even when you didn't have to derive it yourself.
+
+**In combined mode you are handed the input files' contents, not just their
+paths** — work from what you were given rather than re-reading
+`README.md`/`plan.md`/`CLAUDE.md`, which the orchestrator already read this run
+(`gtm-agent.md` Critical Rule 9). This does not stop you inspecting anything
+that *wasn't* passed and that §3's checks genuinely need — `LICENSE`,
+`.gitignore`, git tracking state, a README-referenced asset. In standalone mode
+you read the input files yourself, exactly as before.
 
 ### Step 2 — Draft Deployment Options
 Load `refs/deployment-patterns.md`. Find the section matching the classified
@@ -140,6 +151,19 @@ item, check what the target project's actual files show (a README that already
 has a one-liner and install instructions is `[present]`; no `LICENSE` mentioned
 or found is `[missing]`). Only elaborate on missing items.
 
+### Refresh mode (only when told this is a refresh)
+Given the prior Shipping Guide content plus the project's *current* state, do
+Steps 2–3 fresh and then diff: which deployment prerequisites or presentation
+items changed status since the prior guide, and which are genuinely unchanged.
+Produce the updated section **plus** a short bullet list of what changed — a
+`LICENSE` that now exists, a README that now states its status, a repo that now
+has git initialized, a deployment path that no longer applies because the stack
+moved. Only real, observed deltas (`gtm-agent.md` Critical Rule 10): an item
+that is still `[missing]` is not a change. In combined mode, return that bullet
+list to the orchestrator alongside your content; in standalone mode, render it
+inline at the top of your own file under a `## What changed since <date>`
+heading. If nothing in your section materially changed, say exactly that.
+
 ### Step 4 — Assemble and write
 Combine Steps 1–3 into the Deliverables template above.
 
@@ -151,7 +175,13 @@ Combine Steps 1–3 into the Deliverables template above.
   classification header) to the orchestrator, which assembles it into the
   combined file's Shipping Guide section instead.
 
-### Step 5 — Report
+### Step 5 — Self-check, then report
+Before reporting, check your output against `refs/guide-quality-checklist.md` —
+the "All guides" items plus the **Shipping section** list (and "Refresh mode" if
+this was a refresh). Those are your own section's items only; the orchestrator
+checks the assembled whole. If any item fails, fix it before reporting — never
+report a guide as done with a known failing item.
+
 Standalone/single-guide mode: state the file path written, then a one-paragraph
 summary naming the single most important next action (usually the one
 "blocking" item, if any — otherwise the top nice-to-have). Combined mode: skip

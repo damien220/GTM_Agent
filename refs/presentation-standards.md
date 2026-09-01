@@ -58,7 +58,7 @@ file.
 
 ## 2. Demo video / screenshots / GIFs
 
-This agent does not produce media — see `plan.md §4`. This section is a **brief**
+This agent does not produce media — see `docs/plan.md §4`. This section is a **brief**
 for what the user (or `mediaContentAgent`) should capture, not a generated asset.
 
 - **[SaaS / web app, game, mobile app, content / creative tool] required.** A
@@ -125,7 +125,7 @@ tool's time.
 - **[SaaS / web app, game, mobile app] worth considering** if there's no other
   place a non-technical visitor could land (i.e., the GitHub README is the only
   thing to point people at). Recommend only a brief (sections, one-line value
-  prop, screenshot placement, CTA) — production is out of scope (`plan.md §4`).
+  prop, screenshot placement, CTA) — production is out of scope (`docs/plan.md §4`).
 - **[dev tool / library, CLI, API, Claude Code agent] usually skip.** The
   README/package registry listing already serves this role for a developer
   audience; recommending a separate landing page here is over-scoping unless the
