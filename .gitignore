@@ -12,3 +12,6 @@ __pycache__/
 # Note: .claude/agents/*.md ARE the product here — never ignore them.
 docs/plan.md
 gtm-agent.md
+docs/brand-assets.md
+docs/launch-posts.md
+docs/GTM_logo.jpg

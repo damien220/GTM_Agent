@@ -2,21 +2,23 @@
 
 Point it at a finished or near-finished project and it writes back a concrete, prioritized plan for shipping that project and getting it in front of real users. Not code, not a deployment, not a social post — a Markdown guide you follow.
 
+![GTM_thumb.png]
+
 You give it your project's `README.md`, `plan.md`, and `CLAUDE.md` (or any other files you name). It classifies the project — category, tech stack, maturity, target user — and produces a single `GTM_GUIDE.md` with five sections.
 
 ## What it produces
 
-| Section | Answers |
-|---|---|
-| **Positioning** | What exactly is this, to whom, and unlike what? Is the name already taken by something bigger in the same niche? Which differentiators would survive a competitor's next release? |
-| **Shipping Guide** | What are the deployment options for this stack? Is the presentation — README, demo video, repo hygiene — actually good enough to ship? |
-| **Distribution Guide** | Which platforms should this launch on, in what order, and what effort/payoff should each be expected to return? |
-| **Marketing Plan** | What is the current best-practice marketing strategy for a project like this, and what should be said in a meeting to convince someone to use, back, or buy it? |
+| Section                 | Answers                                                                                                                                                                                |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Positioning**         | What exactly is this, to whom, and unlike what? Is the name already taken by something bigger in the same niche? Which differentiators would survive a competitor's next release?      |
+| **Shipping Guide**      | What are the deployment options for this stack? Is the presentation — README, demo video, repo hygiene — actually good enough to ship?                                                 |
+| **Distribution Guide**  | Which platforms should this launch on, in what order, and what effort/payoff should each be expected to return?                                                                        |
+| **Marketing Plan**      | What is the current best-practice marketing strategy for a project like this, and what should be said in a meeting to convince someone to use, back, or buy it?                        |
 | **Pricing & Packaging** | Which license fits the goal for this project? Free, paid, or donation — and where is the line? What do comparable tools charge, and what is the exact next command to set payments up? |
 
 Any one section can be requested on its own. An existing guide can also be **refreshed** — re-run against the project's current state, with a "what changed" summary at the top.
 
-Three of the five sections are grounded in **live web search** rather than baked-in advice: Positioning (namespace and competitor checks), Marketing (current field practice), and Pricing (comparable prices go stale in weeks). The ref files own the *method*; the search owns the *substance*.
+Three of the five sections are grounded in **live web search** rather than baked-in advice: Positioning (namespace and competitor checks), Marketing (current field practice), and Pricing (comparable prices go stale in weeks). The ref files own the _method_; the search owns the _substance_.
 
 ## What it does not do
 
