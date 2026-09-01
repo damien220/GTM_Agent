@@ -2,7 +2,7 @@
 
 Point it at a finished or near-finished project and it writes back a concrete, prioritized plan for shipping that project and getting it in front of real users. Not code, not a deployment, not a social post — a Markdown guide you follow.
 
-![GTM_thumb.png]
+![GTM_thumb](GTM_thumb.png)
 
 You give it your project's `README.md`, `plan.md`, and `CLAUDE.md` (or any other files you name). It classifies the project — category, tech stack, maturity, target user — and produces a single `GTM_GUIDE.md` with five sections.
 
